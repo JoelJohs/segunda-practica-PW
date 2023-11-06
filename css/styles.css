@@ -1,11 +1,119 @@
 :root {
   /* Colores base */
+  --fondo: #e879f9; /* Color de fondo, rosa pastel muy clarito */
+  --fondo-oscuro: #c026d3; /* Color rosa oscuro */
 
-  /* Colores secundarios */
+  /* Colores secundarios y complementarios */
+  --amarillo: #ffce00; /* Amarillo como color secundario */
+  --verde: #b0e57c; /* Verde como color complementario */
 
   /* Colores Texto */
+  --gris-oscuro: #333; /* Color de texto oscuro para resaltar */
+  --gris-claro: #888; /* Color de texto claro para detalles */
+  --blanco: #fff; /* Color de texto blanco para resaltar */
 
   /* Fuentes */
   --fuente-principal: "Montserrat Alternates", sans-serif;
   --fuente-secundaria: "Staatliches", sans-serif;
+}
+
+/** Estructura base **/
+/* Aplicar un modelo de diseño de caja natural a todos los elementos, pero permitiendo que los componentes cambien */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*Necesario para ajustar 1rem = 10 px*/
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/** Globales **/
+
+body {
+  font-family: var(--fuente-principal);
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+  background-color: var(--fondo);
+}
+
+p {
+  font-family: var(--fuente-principal);
+  color: var(--blanco);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--amarillo);
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+/** Header **/
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo {
+  margin: 3rem auto;
+}
+
+.footer {
+  background-color: var(--fondo-oscuro);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.footer__texto {
+  text-align: center;
+  font-family: var(--fuente-secundaria);
+  font-size: 2.2rem;
+}
+
+.navegacion {
+  background-color: var(--fondo-oscuro);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navegacion__enlace {
+  color: var(--blanco);
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+  color: var(--amarillo);
 }
