@@ -65,11 +65,11 @@ h3 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: 3rem;
 }
 
 h3 {
@@ -104,16 +104,97 @@ h3 {
   padding: 1rem 0;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2rem; /* Separacion forma nueva */
 }
 
 .navegacion__enlace {
   color: var(--blanco);
   font-weight: 700;
   font-size: 3rem;
+  margin-right: 2rem;
+}
+
+.navegacion__enlace:last-of-type {
+  margin-right: 0;
 }
 
 .navegacion__enlace--activo,
 .navegacion__enlace:hover {
   color: var(--amarillo);
+}
+
+/** Grid **/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/** Productos **/
+
+.producto {
+  background-color: var(--fondo-oscuro);
+  padding: 1rem;
+}
+
+.producto__imagen {
+  width: 100%;
+}
+
+.producto__informacion {
+}
+
+.producto__nombre {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.producto__precio {
+  font-size: 2rem;
+  color: var(--amarillo);
+  font-weight: 700;
+}
+
+.producto__nombre,
+.producto__precio {
+  font-family: var(--fuente-principal);
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+/** Graficos **/
+
+.grafico {
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1 / 3;
+}
+
+.grafico--camisas {
+  grid-row: 2 / 3;
+  background-image: url("../img/grafico1.jpg");
+}
+
+.grafico--node {
+  background-image: url("../img/grafico2.jpg");
+  grid-row: 8/9;
+}
+
+@media (min-width: 768px) {
+  .grafico--node {
+    grid-row: 5 / 6;
+    grid-column: 2 / 4;
+  }
+}
+
+.grafico--camisas,
+.grafico--node {
 }
